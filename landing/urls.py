@@ -19,6 +19,8 @@ from django.urls import path
 from boxAllApp import views
 from . import settings
 from django.conf.urls.static import static
+from carritoApp import carrito
+from boxAllApp.views import agregar_producto,eliminar_producto,restar_producto,limpiar_carrito
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,6 +28,13 @@ urlpatterns = [
     path('singup/', views.singup,name='singup'),
     path('logout/', views.cerrarSesion,name='logout'),
     path('singin/', views.singin,name='singing'),
-    path('singin/logout/', views.index,name='lougoutdeaddmin')
+    path('singin/logout/', views.index,name='lougoutdeaddmin'),
+    path('tienda/', views.tienda,name='Tienda'),
+    path('carrito/', views.carritop,name='carritop'),
+    path('agregar/<int:producto_id>', agregar_producto,name='Add'),
+    path('eliminar/<int:producto_id>', eliminar_producto,name='Del'),
+    path('restar/<int:producto_id>', restar_producto,name='Sub'),
+    path('limpiar/', limpiar_carrito,name='CLS')
+
     
 ]+  static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

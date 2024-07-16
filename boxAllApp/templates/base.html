@@ -40,20 +40,22 @@
                   Nuestros Productos
                 </a>
                 <ul  id="menudrop"  class="dropdown-menu active " aria-labelledby="navbarDropdown">
-                  <li><a  class="dropdown-item " href="prod.html">PRODUCTOS</a></li>    
+                  <li><a  class="dropdown-item " href="/tienda">PRODUCTOS</a></li>    
                   <li><a class="dropdown-item " href="galery.html">FOTOS</a></li>
                   <li><a class="dropdown-item" href="Historia.html">HISTORIA</a></li>
                 </ul>
               </li>
 
             </ul>
-            <form class="d-flex">
+            <form class="d-flex"> 
+              
                 {% if user.is_authenticated %}
                 <button class="btn btn-outline-success text-light border border-light me-2 card" style="background-color: #ffc107;"  type="button" onclick="location.href='/logout'">Cerrar Sesion</button>
                 {% else %}
                 <button class="card btn btn-outline-success text-light border border-light me-2" style="background-color: #48426b56" type="button" onclick="location.href='/singin'">Logeate!</button>
                 <button class="btn btn-outline-success text-light border border-light me-2 card" style="background-color: #ffc107;"  type="button" onclick="location.href='/singup'">Registrarse</button>
                 {% endif %}
+                <button onclick="location.href='/carrito'" type="button" class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Carrito</button>
                 
                 
             </form>
@@ -179,6 +181,7 @@
       </div>
     </div>
   </div> 
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>  
       
 </body>  
 
