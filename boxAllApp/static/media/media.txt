@@ -1,0 +1,1 @@
+Carpeta dedicada para archivos media del proyecto.
