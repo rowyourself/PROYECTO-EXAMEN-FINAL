@@ -6,10 +6,10 @@ from django.contrib.auth.models import User
 
 
 class UserRegistrationForm(UserCreationForm):
-    email = forms.EmailField()
-    telefono = forms.CharField(max_length=20, required=False)
-    sexo = forms.ChoiceField(choices=[('M', 'Masculino'), ('F', 'Femenino')], required=False)
-    fecha_nacimiento = forms.DateField(required=False)
+    email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control'}))
+    telefono = forms.CharField(max_length=20, required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    sexo = forms.ChoiceField(choices=[('M', 'Masculino'), ('F', 'Femenino')], required=False, widget=forms.Select(attrs={'class': 'form-control'}))
+    fecha_nacimiento = forms.DateField(required=False, widget=forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}))
 
     class Meta:
         model = User
@@ -20,7 +20,7 @@ class UserRegistrationForm(UserCreationForm):
         user.email = self.cleaned_data['email']
         if commit:
             user.save()
-
+            
             # Guardar el perfil de usuario
             UserProfile.objects.create(
                 user=user,

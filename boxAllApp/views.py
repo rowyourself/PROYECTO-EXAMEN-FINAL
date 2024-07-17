@@ -11,6 +11,11 @@ from django.http import HttpResponse
 # Create your views here.
 def index(request):
     return render(request,'index.html')
+def galery(request):
+    return render(request,'galery.html')
+def historia(request):
+    return render(request,'historia.html')
+
 
     
 def register(request):
@@ -37,7 +42,7 @@ def user_login(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('index')  # Cambia 'home' por la URL a la que quieres redirigir después del login
+                return redirect('index') 
     else:
         form = AuthenticationForm()
     return render(request, 'singin.html', {'form': form})

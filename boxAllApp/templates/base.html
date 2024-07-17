@@ -1,4 +1,4 @@
-{%load static%}
+{%load static%} 
 
 
 <!DOCTYPE html>
@@ -7,9 +7,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
-    <link rel="stylesheet" href="STYLE/style.css">
     <link rel="icon" type="image/x-icon" href="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-9LPfnmMGalILpNQHcB7/dxN5rt3m6TM2xm1xh+0OvEfN8hYlyqKvLMFt1NlA2wGiRnLMqCpr3mLOw3Z9oP+u3w==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script type="text/javascript">
         window.onload = function(){
@@ -22,46 +24,50 @@
         }(document));
         };
         </script>
-        
+    <style>
+        .form-group label {
+          font-weight: bold;
+        }
+    </style>    
+
 </head>
 
 <body style="background-color: white; ">
     
-    <nav class="navbar navbar-expand-lg rounded-3 m-2 opacity-75 shadow border border-light" style="background-color: #65c4c4;">
-        <div class="container-fluid">
-          <a class="navbar-brand fs-1 text" href="/" style="font-family: cursive"><img class="p-1" width="60px" height="60px" src="{% static 'media/LOGO HOME.jpg' %}" alt="" srcset="">Hassber</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar navbar-expand-lg rounded-3 m-2 opacity-75 shadow border border-light" style="background-color: #65c4c4; position: relative; z-index: 999;">
+    <div class="container-fluid">
+        <a class="navbar-brand fs-1 text" href="/"><img class="p-1" width="60px" height="60px" src="{% static 'media/LOGO HOME.jpg' %}" alt="" srcset="">Hassber</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item dropdown ">
-                <a class="nav-link dropdown-toggle text-light shadow border border-light me-2 rounded-3  " style="background-color: #48426b56" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Nuestros Productos
-                </a>
-                <ul  id="menudrop"  class="dropdown-menu active " aria-labelledby="navbarDropdown">
-                  <li><a  class="dropdown-item " href="/tienda">PRODUCTOS</a></li>    
-                  <li><a class="dropdown-item " href="galery.html">FOTOS</a></li>
-                  <li><a class="dropdown-item" href="Historia.html">HISTORIA</a></li>
-                </ul>
-              </li>
-
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-light shadow border border-light me-2 rounded-3" style="background-color: #48426b56; z-index: 999;" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Nuestros Productos
+                    </a>
+                    <ul id="menudrop" class="dropdown-menu active" aria-labelledby="navbarDropdown" style="z-index: 1000;">
+                        <li><a class="dropdown-item" href="/tienda">PRODUCTOS</a></li>    
+                        <li><a class="dropdown-item" href="/galery">FOTOS</a></li>
+                        <li><a class="dropdown-item" href="/historia">HISTORIA</a></li>
+                    </ul>
+                </li>
             </ul>
             <form class="d-flex"> 
-              
-                {% if user.is_authenticated %}
-                <button class="btn btn-outline-success text-light border border-light me-2 card" style="background-color: #ffc107;"  type="button" onclick="location.href='/logout'">Cerrar Sesion</button>
-                {% else %}
-                <button class="card btn btn-outline-success text-light border border-light me-2" style="background-color: #48426b56" type="button" onclick="location.href='/singin'">Logeate!</button>
-                <button class="btn btn-outline-success text-light border border-light me-2 card" style="background-color: #ffc107;"  type="button" onclick="location.href='/singup'">Registrarse</button>
-                {% endif %}
-                <button onclick="location.href='/carrito'" type="button" class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Carrito</button>
-                
-                
-            </form>
-          </div>
+              {% if user.is_authenticated %}
+                  <button class="btn btn-outline-success text-light border border-light me-2 card" style="background-color: #ffc107;" type="button" onclick="location.href='/logout'">Cerrar Sesion</button>
+              {% else %}
+                  <button class="card btn btn-outline-success text-light border border-light me-2" style="background-color: #48426b56" type="button" onclick="location.href='/singin'">Logeate!</button>
+                  <button class="btn btn-outline-success text-light border border-light me-2 card" style="background-color: #ffc107;" type="button" onclick="location.href='/singup'">Registrarse</button>
+              {% endif %}
+              <button onclick="location.href='/carrito'" type="button" class="btn btn-primary">
+                  <i class="fas fa-shopping-cart"></i> Carrito
+              </button>
+          </form>
         </div>
-    </nav>
+    </div>
+</nav>
+
 
     {% block content %}
     {% endblock %}
@@ -107,13 +113,20 @@
                     </a>
                 <br>
                 <br>
-                <p class="text-center"></p>
-                <div id="time-widget">
-                  <h2>Hora Actual</h2>
-                  <div id="current-time"></div>
-                  <div id="city"></div>
+                
+                <div id="time-widget" class="container mt-1">
+                  <div class="card border-primary shadow-sm rounded-3" style="background-size: cover; color: white; background-image: url('{% static 'media/imagen_cielo.jpg' %}')">
+
+                      <div class="card-body text-center">
+                          <h5 class="card-title mb-4">Hora Actual</h5>
+                          <div id="current-time" class="display-5 mb-1">Cargando hora...</div>
+                          <div id="city" class="h6">Ciudad: Nombre de la ciudad</div>
+                      </div>
+                      <div class="card-footer bg-transparent border-top-0 text-center">
+                          <small class="text-muted">Última actualización: <span id="last-updated">Cargando...</span></small>
+                      </div>
+                  </div>
               </div>
-            </div>
   
   
               
@@ -164,29 +177,13 @@
           </div>
       </section> 
         <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          FUNCION NO HABILITADA , PAGINA EN CONSTRUCCION
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          
-        </div>
-      </div>
-    </div>
-  </div> 
+
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>  
       
 </body>  
 
-<script src="SCRIPT/java.js"></script>
-<script src="SCRIPT/script2.js"></script>
-<script src="SCRIPT/script3.js"></script>
+<script src="{% static 'script/java.js' %}"></script>
+<script src="{% static 'script/script2.js' %}"></script>
+<script src="{% static 'script/script3.js' %}"></script>
 
 </html>

@@ -22,19 +22,23 @@ from django.conf.urls.static import static
 from carritoApp import carrito
 from boxAllApp.views import agregar_producto,eliminar_producto,restar_producto,limpiar_carrito
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index,name='index'),
     path('singup/', views.register,name='singup'),
     path('logout/', views.cerrarSesion,name='logout'),
-    path('singin/', views.user_login,name='singing'),
+    path('singin/', views.user_login,name='singin'),
     path('singin/logout/', views.index,name='lougoutdeaddmin'),
     path('tienda/', views.tienda,name='Tienda'),
     path('carrito/', views.carritop,name='carritop'),
     path('agregar/<int:producto_id>', agregar_producto,name='Add'),
     path('eliminar/<int:producto_id>', eliminar_producto,name='Del'),
     path('restar/<int:producto_id>', restar_producto,name='Sub'),
-    path('limpiar/', limpiar_carrito,name='CLS')
+    path('limpiar/', limpiar_carrito,name='CLS'),
+    path('galery/', views.galery,name='galery'),
+    path('historia/', views.historia,name='historia'),
+
 
     
 ]+  static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
