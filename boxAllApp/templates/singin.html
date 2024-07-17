@@ -1,15 +1,13 @@
 {% extends 'base.html'%}
 {%load static%}
 {% block content %}
-<h1>Singear</h1>
+
 
 {{error}}
-<form action="/singin/" method="POST">
+<h2>Iniciar Sesión</h2>
+<form method="post">
     {% csrf_token %}
-
-    {{form.as_p}}
-    <BUtton>
-        SINGIN
-    </BUtton>
+    {{ form.as_p }}
+    <button type="submit">Iniciar Sesión</button>
 </form>
 {% endblock %}

@@ -25,9 +25,9 @@ from boxAllApp.views import agregar_producto,eliminar_producto,restar_producto,l
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index,name='index'),
-    path('singup/', views.singup,name='singup'),
+    path('singup/', views.register,name='singup'),
     path('logout/', views.cerrarSesion,name='logout'),
-    path('singin/', views.singin,name='singing'),
+    path('singin/', views.user_login,name='singing'),
     path('singin/logout/', views.index,name='lougoutdeaddmin'),
     path('tienda/', views.tienda,name='Tienda'),
     path('carrito/', views.carritop,name='carritop'),

@@ -10,39 +10,38 @@ class Carrito:
         else:
             self.carrito = carrito    
 
-    def agregar(self,producto):
+    def agregar(self, producto):
         id = str(producto.id)
         if id not in self.carrito.keys():
-            self.carrito[id] = {
-                'producto_id':producto.id,
-                'nombre':producto.nombre,
-                'precio':producto.precio,
-                'cantidad': 1,
+            self.carrito[id]={
+                "producto_id": producto.id,
+                "nombre": producto.nombre,
+                "acumulado": producto.precio,
+                "cantidad": 1,
             }
-
         else:
-            self.carrito[id]['cantidad']+= 1
-            self.carrito[id]['acumulado']+= producto.precio   
+            self.carrito[id]["cantidad"] += 1
+            self.carrito[id]["acumulado"] += producto.precio
         self.guardar_carrito()
 
     def guardar_carrito(self):
-        self.session['carrito'] = self.carrito
-        self.session.modified  = True
+        self.session["carrito"] = self.carrito
+        self.session.modified = True
 
-    def eliminar(self,producto) :
-        id= str(producto.id)    
+    def eliminar(self, producto):
+        id = str(producto.id)
         if id in self.carrito:
-            del self.carrito[id]  
+            del self.carrito[id]
             self.guardar_carrito()
 
-    def restar(self,producto):
-        id= str(producto.id) 
+    def restar(self, producto):
+        id = str(producto.id)
         if id in self.carrito.keys():
-            self.carrito[id]['cantidad'] -=1
-            self.carrito[id]['acumulado']-= producto.precio 
-            if self.carrito[id]['cantidad']<=0: self.eliminar(producto)
+            self.carrito[id]["cantidad"] -= 1
+            self.carrito[id]["acumulado"] -= producto.precio
+            if self.carrito[id]["cantidad"] <= 0: self.eliminar(producto)
             self.guardar_carrito()
 
     def limpiar(self):
-        self.session['carrito'] = {}
+        self.session["carrito"] = {}
         self.session.modified = True
