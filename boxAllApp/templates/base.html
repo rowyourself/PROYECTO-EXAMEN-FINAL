@@ -84,104 +84,85 @@
 
 
     <section>
-        <div class="container-fluid  shadow">
-          <footer class="d-flex flex-wrap py-3 my-4 border-top  rounded-3 shadow border border-light  " style="background-color:#65c4c4;">
-  
-            <div class="row col-md-4 d-flex text-body-secondary text-center border-end justify-content-center " >
-              <h5 class="mb-3">Nuestra tienda</h5>
+        <div class="container-fluid shadow">
+            <footer class="d-flex flex-wrap py-4 my-3 border-top rounded-3 shadow-sm border border-light" style="background-color: #65c4c4;">
+    
+                <!-- Columna 1: Nuestra Tienda -->
+                <div class="col-md-4 text-body-secondary text-center border-end py-3">
+                    <h5 class="mb-4">Nuestra Tienda</h5>
+                    <p class="mb-3">Dirección: Hernando de Magallanes 2036, Quilpué, Chile</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3344.690397051219!2d-71.4332049235643!3d-33.03828627652434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689d90807dfd9f7%3A0x13bbea4317ab589f!2sHernando%20de%20Magallanes%202036%2C%202420764%20Quilpu%C3%A9%2C%20Valpara%C3%ADso!5e0!3m2!1ses-419!2scl!4v1713738903074!5m2!1ses-419!2scl" width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+    
+                <!-- Columna 2: Métodos de Pago -->
+                <div class="col-md-4 text-body-secondary text-center border-end py-3">
+                    <img src="{% static 'media/correo-electronico-vacio.png' %}" alt="Ícono de Email" width="30" height="30" class="mb-3">
+                    <p class="mb-3">Email: hassberconfecciones@gmail.com</p>
+                    <h5 class="mb-4">Métodos de Pago</h5>
+                    <div class="d-flex justify-content-center">
+                        <img src="{% static 'media/icons8-visa-48.png' %}" alt="Visa" width="30" height="30" class="me-2">
+                        <img src="{% static 'media/icons8-master-card-24.png' %}" alt="MasterCard" width="30" height="30" class="me-2">
+                        <img src="{% static 'media/redcompraicon.svg' %}" alt="Redcompra" width="30" height="30" class="me-2">
+                        <img src="{% static 'media/icons8-paypal-an-online-payments-system-operating-worldwide-24.png' %}" alt="PayPal" width="30" height="30">
+                    </div>
+                </div>
+    
+                <!-- Columna 3: Redes Sociales y Hora Actual -->
+                <div class="col-md-4 text-body-secondary text-center py-3">
+                    <h5 class="mb-4">¡Síguenos en Redes Sociales!</h5>
+                    <div class="d-flex justify-content-center mb-3">
+                        <a href="https://web.facebook.com/profile.php?id=100063694474703" class="me-3"><img src="{% static 'media/instagram_2111463.png' %}" alt="Instagram" width="35" height="35"></a>
+                        <a href="https://web.facebook.com/profile.php?id=100063694474703"><img src="{% static 'media/facebook_4494475.png' %}" alt="Facebook" width="35" height="35"></a>
+                    </div>
+    
+                    <div id="time-widget" class="container">
+                        <div class="card border-primary shadow-sm rounded-3" style="background-image: url('{% static 'media/imagen_cielo.jpg' %}'); background-size: cover; color: black;">
+                            <div class="card-body text-center p-2">
+                                <h6 class="card-title mb-1">Hora Actual</h6>
+                                <div id="current-time" class="display-6 mb-1">Cargando hora...</div>
+                                <div id="city" class="h6 mb-1">Ciudad: Nombre de la ciudad</div>
+                                <small class="text-muted">Última actualización: <span id="last-updated">Cargando...</span></small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                </div>
+    
+            </footer>
+        </div>
+    </section>
+    
 
-              <p class="piePage ">Direccion: hernando de magallanes 2036 , Quilpué, Chile</p>
-              <iframe class="row col-ms-10 d-flex justify-content-center ms-1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3344.690397051219!2d-71.4332049235643!3d-33.03828627652434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689d90807dfd9f7%3A0x13bbea4317ab589f!2sHernando%20de%20Magallanes%202036%2C%202420764%20Quilpu%C3%A9%2C%20Valpara%C3%ADso!5e0!3m2!1ses-419!2scl!4v1713738903074!5m2!1ses-419!2scl" width="150" height="112" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-              
-
-  
-              
-            </div>
-              
-            <div class="col-md-4 text-body-secondary text-center border-end">
-                <img class="justify-content-center" width="40px" height="40px" src="{% static 'media/correo-electronico-vacio.png' %}" alt="">
-                <p class="piePage">Email:hassberconfecciones@gmail.com</p>
-              <h5 class="mb-3">Métodos de pago</h5>
-                <img src="{% static 'media/icons8-visa-48.png' %}" width="40px" height="40px">
-                <img src="{% static 'media/icons8-master-card-24.png' %}" width="40px" height="40px">
-                <img src="{% static 'media/redcompraicon.svg' %}" width="40px" height="40px">
-                <img src="{% static 'media/icons8-paypal-an-online-payments-system-operating-worldwide-24.png' %}" width="40px" height="40px">
-                
-            </div>
-  
-  
-            <div class="col-md-4 text-body-secondary text-center justify-content-center">
-              
-              <h5 class="mb-3">¡Síguenos en redes sociales!</h5>
-              <a href="https://web.facebook.com/profile.php?id=100063694474703">
-                <img src="{% static 'media/instagram_2111463.png' %}" width="45px" height="45px">
-                </a>
-                <a href="https://web.facebook.com/profile.php?id=100063694474703">
-                    <img src="{% static 'media/facebook_4494475.png' %}" width="45px" height="45px">
-                    </a>
-                <br>
-                <br>
-                
-                <div id="time-widget" class="container mt-1">
-                  <div class="card border-primary shadow-sm rounded-3" style="background-size: cover; color: black; background-image: url('{% static 'media/imagen_cielo.jpg' %}')">
-
-                      <div class="card-body text-center">
-                          <h5 class="card-title mb-4">Hora Actual</h5>
-                          <div id="current-time" class="display-5 mb-1">Cargando hora...</div>
-                          <div id="city" class="h6">Ciudad: Nombre de la ciudad</div>
-                      </div>
-                      <div class="card-footer bg-transparent border-top-0 text-center">
-                          <small class="text-muted">Última actualización: <span id="last-updated">Cargando...</span></small>
-                      </div>
-                  </div>
-              </div>
-  
-  
-              
-          
-              
-          </footer>
-          </div>
-      </section>  
       <section>
         <div class="container-fluid  shadow">
-          <footer class="d-flex flex-wrap py-3 my-1 border-top  rounded-3 shadow border border-light  " style="background-color:rgb(155, 192, 209)">
-  
-            <div class="col-md-3 text-body-secondary text-center border-end " >
-                <h5 class="mb-3 piePage">Reduce Tiempos y Costos</h5>
-                <img src="{% static 'media/ICONO COSTO.png' %}" alt="" srcset="" width="45px" height="45px">  
-        
-            </div>
-              
-            <div class="col-md-3 text-body-secondary text-center border-end">
-                <h5 class="mb-3 piePage">Despachos Rápidos y
-                Económicos en todo Chile</h5>
-                <img src="{% static 'media/camion.png' %}" alt="" srcset="" width="45px" height="45px">
-                
-            </div>
-  
-  
-            <div class="col-md-3 text-body-secondary text-center border-end">
-              
-                <h5 class="mb-3 piePage">Contamos con un Amplio
-                Stock de Productos</h5>
-                <img src="{% static 'media/en-stock.png' %}" alt="" srcset="" width="45px" height="45px">
-
-            </div>
-
-            <div class="col-md-3 text-body-secondary text-center">
-              
-                <h5 class="mb-3 piePage">Soporte y Asesoría
-                    para todas tus Preguntas.</h5>
-                <img src="{% static 'media/ICONO COSTO.png' %}" alt="" srcset="" width="45px" height="45px">    
-  
-              </div>
-  
-  
-              
-          
-              
-          </footer>
+            <footer class="d-flex flex-wrap py-4 my-1 border-top rounded-3 shadow-sm border border-light" style="background-color: rgb(155, 192, 209);">
+                <div class="col-md-3 text-center border-end py-3">
+                    <img src="{% static 'media/ICONO COSTO.png' %}" alt="Ícono de Costo" width="60px" height="60px">
+                    <h5 class="my-3">Reduce Tiempos y Costos</h5>
+                    <p class="text-muted">Optimizamos procesos para que ahorres tiempo y dinero.</p>
+                </div>
+            
+                <div class="col-md-3 text-center border-end py-3">
+                    <img src="{% static 'media/camion.png' %}" alt="Ícono de Camión" width="60px" height="60px">
+                    <h5 class="my-3">Despachos Rápidos y Económicos</h5>
+                    <p class="text-muted">Enviamos tus productos de manera rápida y económica en todo Chile.</p>
+                </div>
+            
+                <div class="col-md-3 text-center border-end py-3">
+                    <img src="{% static 'media/en-stock.png' %}" alt="Ícono de En Stock" width="60px" height="60px">
+                    <h5 class="my-3">Amplio Stock de Productos</h5>
+                    <p class="text-muted">Contamos con una gran variedad de productos disponibles.</p>
+                </div>
+            
+                <div class="col-md-3 text-center py-3">
+                    <img src="{% static 'media/ICONO COSTO.png' %}" alt="Ícono de Soporte" width="60px" height="60px">
+                    <h5 class="my-3">Soporte y Asesoría Personalizada</h5>
+                    <p class="text-muted">Te ofrecemos ayuda y consejos para todas tus consultas.</p>
+                </div>
+            </footer>
+            
           </div>
       </section> 
         <!-- Modal -->
