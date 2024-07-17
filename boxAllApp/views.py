@@ -24,7 +24,12 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('index')  
+            messages.success(request, '¡Usuario creado exitosamente y sesión iniciada!')
+            return redirect('index')
+        else:
+            for field, errors in form.errors.items():
+                for error in errors:
+                    messages.error(request, f'{field}: {error}')
     else:
         form = UserRegistrationForm()
     return render(request, 'singup.html', {'form': form})
@@ -42,15 +47,18 @@ def user_login(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('index') 
+                messages.success(request, '¡Login exitoso!')
+                return redirect('index')
+        else:
+            messages.error(request, 'Inicio de sesión fallido. Por favor, verifica tus credenciales.')
     else:
         form = AuthenticationForm()
     return render(request, 'singin.html', {'form': form})
 
 def cerrarSesion(request):
     logout(request)
-    return redirect('index') 
-
+    messages.info(request, '¡Has cerrado sesión correctamente!')
+    return redirect('index')
 
 
 #CARRITO
@@ -61,6 +69,12 @@ def carritop(request):
     return render(request,'carrito.html')
 
 def agregar_producto(request, producto_id):
+    carrito = Carrito(request)
+    producto = Producto.objects.get(id=producto_id)
+    carrito.agregar(producto)
+    return redirect('carritop')
+
+def agregar_producto2(request, producto_id):
     carrito = Carrito(request)
     producto = Producto.objects.get(id=producto_id)
     carrito.agregar(producto)

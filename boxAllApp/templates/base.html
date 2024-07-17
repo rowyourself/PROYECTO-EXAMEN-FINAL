@@ -31,6 +31,14 @@
     </style>    
 
 </head>
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+{% endif %}
 
 <body style="background-color: white; ">
     
@@ -115,7 +123,7 @@
                 <br>
                 
                 <div id="time-widget" class="container mt-1">
-                  <div class="card border-primary shadow-sm rounded-3" style="background-size: cover; color: white; background-image: url('{% static 'media/imagen_cielo.jpg' %}')">
+                  <div class="card border-primary shadow-sm rounded-3" style="background-size: cover; color: black; background-image: url('{% static 'media/imagen_cielo.jpg' %}')">
 
                       <div class="card-body text-center">
                           <h5 class="card-title mb-4">Hora Actual</h5>
@@ -182,8 +190,6 @@
       
 </body>  
 
-<script src="{% static 'script/java.js' %}"></script>
 <script src="{% static 'script/script2.js' %}"></script>
-<script src="{% static 'script/script3.js' %}"></script>
 
 </html>

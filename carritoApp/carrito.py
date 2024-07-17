@@ -23,6 +23,19 @@ class Carrito:
             self.carrito[id]["cantidad"] += 1
             self.carrito[id]["acumulado"] += producto.precio
         self.guardar_carrito()
+    def agregar2(self, producto):
+        id = str(producto.id)
+        if id not in self.carrito.keys():
+            self.carrito[id]={
+                "producto_id": producto.id,
+                "nombre": producto.nombre,
+                "acumulado": producto.precio,
+                "cantidad": 1,
+            }
+        else:
+            self.carrito[id]["cantidad"] += 1
+            self.carrito[id]["acumulado"] += producto.precio
+        self.guardar_carrito()        
 
     def guardar_carrito(self):
         self.session["carrito"] = self.carrito

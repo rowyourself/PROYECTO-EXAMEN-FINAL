@@ -66,6 +66,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'carritoApp.context_processor.total_carrito',
+                'django.template.context_processors.media',
             ],
         },
     },

@@ -20,7 +20,7 @@ from boxAllApp import views
 from . import settings
 from django.conf.urls.static import static
 from carritoApp import carrito
-from boxAllApp.views import agregar_producto,eliminar_producto,restar_producto,limpiar_carrito
+from boxAllApp.views import agregar_producto,eliminar_producto,restar_producto,limpiar_carrito,agregar_producto2
 
 
 urlpatterns = [
@@ -38,6 +38,7 @@ urlpatterns = [
     path('limpiar/', limpiar_carrito,name='CLS'),
     path('galery/', views.galery,name='galery'),
     path('historia/', views.historia,name='historia'),
+    path('agregar2/<int:producto_id>', agregar_producto2,name='Add2')
 
 
     
